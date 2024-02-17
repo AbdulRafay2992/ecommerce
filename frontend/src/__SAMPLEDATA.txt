@@ -1,0 +1,72 @@
+let data = {
+    "allCategories": [
+    {
+        "id": 2,
+        "name": "Electronics",
+        "parentCategory": 0,
+        "__typename": "CategoryType"
+    },
+    {
+        "id": 3,
+        "name": "Clothes",
+        "parentCategory": 0,
+        "__typename": "CategoryType"
+    },
+    {
+        "id": 4,
+        "name": "T-Shirts",
+        "parentCategory": 3,
+        "__typename": "CategoryType"
+    },
+    {
+        "id": 5,
+        "name": "Mobiles",
+        "parentCategory": 2,
+        "__typename": "CategoryType"
+    },
+    {
+        "id": 6,
+        "name": "Vivo",
+        "parentCategory": 5,
+        "__typename": "CategoryType"
+    },
+    {
+        "id": 7,
+        "name": "Laptops",
+        "parentCategory": 2,
+        "__typename": "CategoryType"
+    },
+    {
+        "id": 8,
+        "name": "Ipad",
+        "parentCategory": 2,
+        "__typename": "CategoryType"
+    },
+    {
+        "id": 9,
+        "name": "safsdf",
+        "parentCategory": 0,
+        "__typename": "CategoryType"
+    },
+    {
+        "id": 10,
+        "name": "Ipod",
+        "parentCategory": 2,
+        "__typename": "CategoryType"
+    }
+    ]
+}
+
+let data={
+    "allAttributes:[
+        {
+            "name": size
+        },
+        {
+            "name": color
+        },
+        {
+            "name": design
+        }
+    ]
+}

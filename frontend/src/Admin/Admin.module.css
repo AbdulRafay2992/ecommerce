@@ -1,0 +1,19 @@
+.header{
+    display: flex;
+    justify-content: center;
+    background: rgb(132, 221, 237);
+    margin-bottom: 2rem;
+    >div{
+        margin: 1rem;
+    }
+    >div>a{
+        text-decoration: none;
+        transition: color 0.5s;
+    }
+    >div>a:hover{
+        color: greenyellow;
+    }
+}
+.body{
+    margin-top: 2rem;
+}
