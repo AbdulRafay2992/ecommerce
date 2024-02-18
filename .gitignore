@@ -1,0 +1,4 @@
+frontend/build/
+frontend/node_modules/
+production/
+manage.py
