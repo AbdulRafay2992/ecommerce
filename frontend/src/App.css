@@ -1,0 +1,9 @@
+button {
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(to left, #70ddd4 0%, #29f1eb 100%);
+}
+
+button:hover {
+    background: #29f1eb;
+}

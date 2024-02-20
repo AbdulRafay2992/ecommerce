@@ -1,7 +1,7 @@
 .header{
     display: flex;
     justify-content: center;
-    background: rgb(132, 221, 237);
+    background: linear-gradient(270deg,#70ddd4 0,#29f1eb);
     margin-bottom: 2rem;
     >div{
         margin: 1rem;

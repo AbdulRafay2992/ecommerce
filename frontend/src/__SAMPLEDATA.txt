@@ -70,3 +70,59 @@ let data={
         }
     ]
 }
+
+let data = {
+    "attributesWithValues": [
+        {
+            "name": "size",
+            "values": [
+                {
+                    "value": "large",
+                    "__typename": "AttributeValueType"
+                },
+                {
+                    "value": "medium",
+                    "__typename": "AttributeValueType"
+                },
+                {
+                    "value": "small",
+                    "__typename": "AttributeValueType"
+                }
+            ],
+            "__typename": "AttributeWithValuesType"
+        },
+        {
+            "name": "color",
+            "values": [
+                {
+                    "value": "green",
+                    "__typename": "AttributeValueType"
+                },
+                {
+                    "value": "red",
+                    "__typename": "AttributeValueType"
+                }
+            ],
+            "__typename": "AttributeWithValuesType"
+        },
+        {
+            "name": "design",
+            "values": [],
+            "__typename": "AttributeWithValuesType"
+        },
+        {
+            "name": "pack",
+            "values": [
+                {
+                    "value": "3",
+                    "__typename": "AttributeValueType"
+                },
+                {
+                    "value": "5",
+                    "__typename": "AttributeValueType"
+                }
+            ],
+            "__typename": "AttributeWithValuesType"
+        }
+    ]
+}
