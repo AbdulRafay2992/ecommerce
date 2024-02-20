@@ -34,7 +34,7 @@ const Files = ({ files, setFiles }) => {
 
 
     const validateAndSetFiles = (newFiles) => {
-        if (newFiles.length>9) {
+        if (files.length+newFiles.length>10) {
             alert('Max 10 files allowed');
                 return;
         }

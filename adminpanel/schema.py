@@ -39,19 +39,6 @@ class AttributeValueType(DjangoObjectType):
     class Meta:
         model = AttributeValue
 
-# class CreateAttributeValueMutation(graphene.Mutation):
-#     class Arguments:
-#         attribute = graphene.ID(required=True)
-#         value = graphene.String(required=True)
-
-#     attribute_value = graphene.Field(AttributeValueType)
-
-#     def mutate(self, info, attribute,value):
-#         new_attribute_value = AttributeValue(attribute=attribute,value=value)
-#         new_attribute_value.save()
-
-#         return CreateAttributeValueMutation(attribute_value=new_attribute_value)
-    
 class CreateAttributeValueMutation(graphene.Mutation):
     class Arguments:
         attribute = graphene.String(required=True)
@@ -75,7 +62,6 @@ class AttributeWithValuesType(graphene.ObjectType):
 
     def resolve_values(self, info):
         return AttributeValue.objects.filter(attribute_id=self.id)
-
 
 class Query(graphene.ObjectType):
     all_categories = graphene.List(CategoryType)

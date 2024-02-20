@@ -6,40 +6,63 @@
         display: flex;
         flex-direction: column;
     }
+    >div>*{
+        max-width: 20rem;
+    }
+    >div>div:nth-child(4)>div:nth-child(1){
+        width: 20rem;
+    }
 
     >div>* {
         margin: 1rem;
     }
+}
+@media (min-width: 980px) {
+    .AddProduct>div>div:nth-child(4)>div:nth-child(1){
+        width: 80rem;
+    }
+}
 
-    >div>button {
-        width: 5rem;
-        cursor: pointer;
+@media (min-width: 768px) {
+    .AddProduct>div>div:nth-child(4)>div:nth-child(1){
+        width: 60em;
+    }
+}
+@media (min-width: 480) {
+    .AddProduct>div>div:nth-child(4)>div:nth-child(1){
+        width: 40rem;
     }
 }
 
 .select {
-    border: 1px solid greenyellow;
+    border: 1px solid;
+    min-height: 2rem;
 
     >div {
-        background: whitesmoke;
         padding: 0.5rem;
-        margin: 0.2rem;
         transition: background 0.4s;
         cursor: pointer;
     }
 
     >div:hover {
-        background: wheat;
+        background: rgb(180, 178, 178);
+        color: white;
     }
 }
 
 .droparea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     >div:nth-child(1) {
-        width: 25rem;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        min-width: 25rem;
     }
+
     >div:nth-child(2) {
         width: 25rem;
         height: 10rem;
@@ -49,6 +72,7 @@
         background: rgb(218, 216, 221);
         border: 1px solid;
     }
+
     >div>input {
         display: none;
     }
@@ -56,6 +80,7 @@
 
 .File {
     position: relative;
+
     >img {
         width: 10rem;
         height: 10rem;
@@ -78,6 +103,7 @@
         justify-content: center;
         align-items: center;
     }
+
     >span:hover {
         background: rgb(255, 255, 255);
         color: red;

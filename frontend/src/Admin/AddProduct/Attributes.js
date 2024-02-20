@@ -22,30 +22,45 @@ const Attributes = ({ attributes, setAttributes }) => {
     }, [loading, error, data]);
 
     const Selected = (event) => {
-        let id = event.target.value
-        let name = event.target.options[event.target.selectedIndex].innerText;
+        let name = event.target.value
         event.target.value='0'
         setAttributes(prevAttributes  => [...prevAttributes , {
-            id: id,
             name: name
         }])
-        setremainingAttributes(remainingAttributes.filter(item => item.id !== id))
+        setremainingAttributes(remainingAttributes.filter(item => item.name !== name))
+    }
+
+    const Delete = (event) => {
+        let name = event.target.parentNode.parentNode.getAttribute('data-name');
+        setAttributes(prevAttributes=>prevAttributes.filter(item=>item.name!=name))
+        setremainingAttributes(prev=>[...prev,{name:name}])
+        //     => [...prevAttributes , {
+        //     name: name
+        // }])
+        // alert(itemName);
     }
 
     return (
-        <div className={style.Attributes}>
+        <div>
             <select onChange={Selected} value='0'>
                 <option key={0} value={0} disabled>--Select Attributes--</option>
                 {
                     remainingAttributes.map((item, index) => {
-                        return <option key={index} value={item.id}>{item.name}</option>
+                        return <option key={index} value={item.name}>{item.name}</option>
                     })
                 }
             </select>
-            <div>
+            <div onClick={Delete} className={style.select}>
                 {
                     attributes.map((item, index) => {
-                        return <div key={index}>{item.name}</div>
+                        return (
+                            <div key={index} data-name={item.name} className="align-in-row">
+                                <div>{item.name}</div>
+                                <div className="close">
+                                    <div>+</div>    
+                                </div>    
+                            </div>
+                        )
                     })
                 }
             </div>

@@ -1,9 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
 button {
     border: none;
     cursor: pointer;
-    background: linear-gradient(to left, #70ddd4 0%, #29f1eb 100%);
+    background: rgb(94 234 212);
+    padding: 0.3rem;
+    transition: box-shadow 0.5s;
 }
 
 button:hover {
-    background: #29f1eb;
+    box-shadow: 5px 5px 5px 2px rgba(0,0,0,0.3);
+}
+
+.close {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.close>div {
+    cursor: pointer;
+    color: red;
+    transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+    font-size: 2rem;
+    transform: rotate(45deg);
+}
+
+.close>div:hover {
+    color: rgb(181, 181, 181);
+    transform: rotate(0deg);
+}
+
+.modal {
+    position: fixed;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    /* Adds a blur effect to the background */
+    border-radius: 10px;
+    /* Adds rounded corners for a softer look */
+    padding: 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding-top: 10rem;
+}
+.align-in-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem;
 }

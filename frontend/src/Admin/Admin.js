@@ -8,7 +8,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 const Admin = () => {
   return (
     <>
-      <div className={style.header}>
+      <div className={`bg-teal-300 ${style.header}`}>
         <div>
           <a href="/categories" aria-current="page">Categories</a>
         </div>

@@ -11,9 +11,9 @@ const AddModal = ({addCategory,parent,close}) => {
         addCategory(category.current)
     }
     return (
-        <div className={style.modal}>
+        <div className='modal'>
             <div>
-                <div>
+                <div className='close'>
                     <div onClick={close}>+</div>
                 </div>
                 <div>

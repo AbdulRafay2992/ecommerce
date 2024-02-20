@@ -1,9 +1,10 @@
-import React, { useState, useEffect, Suspense, useRef } from "react";
-import { useMutation, gql, useQuery } from '@apollo/client';
+import React, { useState, useEffect, useRef } from "react";
+import { gql, useQuery } from '@apollo/client';
 import style from "./AddProduct.module.css";
 
-const Categories = ({setCategory}) => {
+const Categories = ({ setCategory }) => {
     const [categories, setCategories] = useState([])
+    const allCategories = useRef()
 
     const GET_CATEGORIES = gql`
         query {
@@ -18,6 +19,7 @@ const Categories = ({setCategory}) => {
     useEffect(() => {
         if (data && data.allCategories && !loading && !error) {
             setCategories(categoriesTree(data.allCategories));
+            allCategories.current=categoriesTree(data.allCategories)
         }
     }, [loading, error, data]);
 
@@ -35,28 +37,47 @@ const Categories = ({setCategory}) => {
 
     function CategorySelected(ID) {
         let category = categories.filter(item => item.id == ID)[0]
-        let subcategory = [...category.subcategory]
-        if (subcategory.length > 0) {
+        let subcategory = category.subcategory
+        if (subcategory.length > 1) {
             setCategories(subcategory);
         }
+        else if (subcategory.length == 1) {
+            setCategories(subcategory);
+            setCategory(subcategory[0].id)
+        }
         else if (subcategory.length == 0) {
-            setCategories([category])
-            setCategory(category.id)
+            setCategory(ID)
+            setCategories([category]);
         }
     }
 
+    function resetCategory() {
+        console.log(allCategories.current);
+        setCategories(allCategories.current);
+        setCategory(undefined)
+    }
+
     return (
-        <div className={style.select}>
-            {
-                categories.map((item, index) => {
-                    return (
-                        <div key={index} onClick={() => CategorySelected(item.id)}>
-                            {item.name}
-                        </div>
-                    )
-                })
-            }
+        <div>
+            <div className="align-in-row bg-teal-300">
+                <div>Select Category</div>
+                <div className="close">
+                    <div onClick={resetCategory}>+</div>
+                </div>
+            </div>
+            <div className={style.select}>
+                {
+                    categories.map((item, index) => {
+                        return (
+                            <div key={index} onClick={() => CategorySelected(item.id)}>
+                                {item.name}
+                            </div>
+                        )
+                    })
+                }
+            </div>
         </div>
+
     )
 }
 

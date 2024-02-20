@@ -1,7 +1,6 @@
 .header{
     display: flex;
     justify-content: center;
-    background: linear-gradient(270deg,#70ddd4 0,#29f1eb);
     margin-bottom: 2rem;
     >div{
         margin: 1rem;
@@ -11,7 +10,7 @@
         transition: color 0.5s;
     }
     >div>a:hover{
-        color: greenyellow;
+        color: white;
     }
 }
 .body{

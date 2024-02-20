@@ -17,9 +17,9 @@ const AddModal = ({setting,close}) => {
 
     }
     return (
-        <div className={style.modal}>
+        <div className='modal'>
             <div>
-                <div>
+                <div className='close'>
                     <div onClick={close}>+</div>
                 </div>
                 <div>
